@@ -26,6 +26,8 @@ DadBoard is a lighthearted, mobile-friendly joke app where you can fetch dad jok
 Check it out here:  
 🔗 [https://dadboard2.netlify.app]
 
+![DadBoard](https://github.com/user-attachments/assets/26938761-4184-42d8-98b9-69e6c039d46f)
+
 ---
 
 ## 💡 Why the Rewrite?
