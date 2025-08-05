@@ -1,0 +1,37 @@
+#root {
+  width: 100%;
+}
+
+.title-text {
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 3em;
+  text-shadow: 2px 2px #8d8d8d;
+}
+
+.strapline-text {
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 2em;
+}
+
+.instagram {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 0px;
+}
+
+.centre-text {
+  text-align: center;
+}
+
+a {
+  color: #03bd76;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #018f59;
+}
