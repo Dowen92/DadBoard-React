@@ -37,67 +37,68 @@ a:hover {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px;
-    background-color: rgb(53, 53, 53);
-    filter: drop-shadow(0px 5px 10px #000000);
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  background-color: rgb(53, 53, 53);
+  filter: drop-shadow(0px 5px 10px #000000);
 }
 
 .card-content {
-  margin:10px;
+  margin: 10px;
 }
+
 .card-footer {
-    display: flex;
-    justify-content: space-evenly;
-    border-top: 1px solid white;
-    padding-top: 10px;
-    padding-bottom:10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .card-item {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .joke-hr {
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 
 .joke {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
-} 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
 
 .joke-container {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    width: 80vw;
-    padding: 10px;   
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 80vw;
+  padding: 10px;
 }
 
 .joke-text {
-    width:100%;
-    font-size: 1.5rem;
-    text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .joke-buttons-container {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    width: 80vw;
-    padding: 10px;   
-    padding-top: 0px;
-    padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 80vw;
+  padding: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .padding-left {
@@ -105,26 +106,40 @@ a:hover {
 }
 
 .punchline-container {
-    flex: 1;
-    padding-top: 0px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+  flex: 1;
+  padding-top: 0px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .joke-button {
-    background-color:#48c78e;
-    color:white;
-    padding:10px;
-    border: 0px none;
-    border-radius: 10px;
-    margin:10px;
-    min-width: 80px;
-    max-width: 100px;
+  background-color: #48c78e;
+  color: white;
+  padding: 10px;
+  border: 0px none;
+  border-radius: 10px;
+  margin: 10px;
+  min-width: 80px;
+  max-width: 100px;
 
-    filter: drop-shadow(0px 5px 4px #000000);
+  filter: drop-shadow(0px 5px 4px #000000);
 }
 
 .joke-button:hover {
-    background-color: #36ac77;
+  background-color: #36ac77;
+}
+
+.donate {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.donate p {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#donate-image {
+  width: 200px;
 }
