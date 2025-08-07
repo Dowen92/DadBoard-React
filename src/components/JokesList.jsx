@@ -29,7 +29,9 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
 
         saveJoke(jokeData);
 
+        console.log("SAVING JOKE : " + newJokeText)
         setNewJokeText("");
+        console.log("CLEARED:" + newJokeText);
     }
 
 
@@ -42,7 +44,14 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
                     </div>
                     <div className='field is-grouped flex-1'>
                         <button onClick={onClickSaveJoke} className='button is-primary add-button' id="addJokeButton"><i className='fas fa-plus'></i></button>
-                        <input onChange={(e) => setNewJokeText(e.target.value)} className='input' id="jokeInput" type="text" placeholder="Add a new joke to your list..." />
+                        <input 
+                        value={newJokeText}
+                            onChange={(e) => setNewJokeText(e.target.value)} 
+                            className='input' 
+                            id="jokeInput" 
+                            type="text" 
+                            placeholder="Add a new joke to your list..." 
+                        />
                     </div>
                 </div>
                 <hr />
