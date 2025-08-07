@@ -29,9 +29,7 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
 
         saveJoke(jokeData);
 
-        console.log("SAVING JOKE : " + newJokeText)
         setNewJokeText("");
-        console.log("CLEARED:" + newJokeText);
     }
 
 
