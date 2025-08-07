@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import drumAudio from '../../src/assets/audio/drum.mp3';
 
-export default function Joke() {
+export default function Joke({ saveJoke }) {
+
+    const [data, setData] = useState(null);
+
     let audio = new Audio(drumAudio);
+    
     function playAudio() {
         audio.play()
     }
-
-    const [data, setData] = useState(null);
 
     useEffect(() => {
         fetchJoke();
@@ -60,7 +62,11 @@ export default function Joke() {
                         </button>
                     </div>
                     <div className='card-item'>
-                        <button className='button is-primary add-joke-button joke-button' id='addJokeButton'>
+                        <button
+                            className='button is-primary add-joke-button joke-button'
+                            id='addJokeButton'
+                            onClick={() => saveJoke(data)}
+                        >
                             <i className='fa fa-plus fa-2x'></i>
                             <i className='padding-left fa fa-list-ul fa-2x'></i>
                         </button>
