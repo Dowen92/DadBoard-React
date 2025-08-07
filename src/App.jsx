@@ -4,6 +4,7 @@ import Header from '../src/components/Header'
 import Joke from '../src/components/Joke';
 import Donation from '../src/components/Donation'
 import JokesList from '../src/components/JokesList';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 
     setSavedJokes(prev => [...prev, jokeObject]);
 
+    toast("Joke saved!");
   }
 
   function deleteJoke(id) {
@@ -33,9 +35,9 @@ function App() {
   }
 
   function updateJokeLaughCounter(id) {
-    setSavedJokes(prev => prev.map(joke => 
-      joke.id === id 
-        ? {...joke, laughs: joke.laughs +1} 
+    setSavedJokes(prev => prev.map(joke =>
+      joke.id === id
+        ? { ...joke, laughs: joke.laughs + 1 }
         : joke))
   }
 
@@ -43,16 +45,31 @@ function App() {
     localStorage.setItem(storageName, JSON.stringify(savedJokes));
   }, [savedJokes]);
 
+
   return (
     <>
       <Header />
       <Joke saveJoke={saveJoke} />
       <Donation />
-      <JokesList 
-        savedJokes={savedJokes} 
-        deleteJoke={deleteJoke} 
-        updateJokeLaughCounter={updateJokeLaughCounter} 
+      <JokesList
+        savedJokes={savedJokes}
+        deleteJoke={deleteJoke}
+        updateJokeLaughCounter={updateJokeLaughCounter}
         saveJoke={saveJoke}
+      />
+
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+        theme="dark"
+
       />
     </>
   )
