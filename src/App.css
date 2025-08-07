@@ -43,10 +43,10 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   overflow: visible;
   background-color: rgb(53, 53, 53);
-  filter: drop-shadow(0px 5px 10px #000000);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
   border-radius: 25px;
 }
 
@@ -71,7 +71,6 @@ a:hover {
   margin-left: 10%;
   margin-right: 10%;
 }
-
 
 .joke {
   display: flex;
@@ -125,8 +124,7 @@ a:hover {
   margin: 10px;
   min-width: 80px;
   max-width: 100px;
-
-  filter: drop-shadow(0px 5px 4px #000000);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
 }
 
 .joke-button:hover {
@@ -154,12 +152,13 @@ a:hover {
   margin-top: 20px;
 }
 
-.joke-list-buttons{
- display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
+.joke-list-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
 }
+
 .list-container {
   display: flex;
   justify-content: center;
@@ -205,8 +204,7 @@ a:hover {
   min-width: 48px;
   max-width: 48px;
   height: 40px;
-
-  filter: drop-shadow(0px 5px 4px #000000);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
 }
 
 .add-button:hover {
@@ -234,9 +232,9 @@ a:hover {
 
 .joke-row p {
   text-align: center;
-  margin:auto;
+  margin: auto;
   margin-bottom: 15px;
-  padding-left:10px;
+  padding-left: 10px;
   font-size: 1.1em;
 }
 
@@ -282,8 +280,8 @@ hr {
   display: block;
   border: none;
   background-color: #f5f5f5;
-  height:2px;
-  margin:1.5rem 0;
+  height: 2px;
+  margin: 1.5rem 0;
 }
 
 .delete-button {
@@ -296,8 +294,7 @@ hr {
   min-width: 48px;
   max-width: 48px;
   height: 40px;
-
-  filter: drop-shadow(0px 5px 4px #000000);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
 }
 
 .delete-button:hover {
@@ -314,7 +311,7 @@ hr {
   width: auto;
   height: 40px;
   padding: 10px;
-  filter: drop-shadow(0px 5px 4px #000000);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
   justify-self: end;
 }
 
@@ -323,26 +320,7 @@ hr {
   cursor: pointer;
 }
 
-.laugh-count{
-  margin-left:5px;
+.laugh-count {
+  margin-left: 5px;
   font-size: .75em;
-}
-
-.done-button {
-  margin: 0px 10px;
-  background-color: #48c78e;
-  color: white;
-  padding: 10px;
-  border: 0px none;
-  border-radius: 10px;
-  min-width: 48px;
-  max-width: 48px;
-  height: 40px;
-
-  filter: drop-shadow(0px 5px 4px #000000);
-}
-
-.done-button:hover {
-  background-color: #36ac77;
-  cursor: pointer;
 }
