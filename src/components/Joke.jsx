@@ -38,8 +38,7 @@ export default function Joke({ saveJoke }) {
 
     return (
         <>
-            <section className='card'>
-                <audio src="drumAudio" id="audio"></audio>
+            <section className='card'>                
                 <div className='card-content'>
                     <div className='joke-text'>
                         <p id="jokeText">
