@@ -5,16 +5,11 @@ import Joke from '../src/components/Joke';
 import Donation from '../src/components/Donation'
 import JokesList from '../src/components/JokesList';
 import { ToastContainer, toast } from 'react-toastify';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
 
-  const storageName = "jokes";
-
-  const [savedJokes, setSavedJokes] = useState(() => {
-    const saved = localStorage.getItem(storageName);
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
-  });
+  const [savedJokes, setSavedJokes] = useLocalStorage("jokes", []);
 
   function saveJoke(jokeData) {
     if (!jokeData) return;
@@ -40,11 +35,6 @@ function App() {
         ? { ...joke, laughs: joke.laughs + 1 }
         : joke))
   }
-
-  useEffect(() => {
-    localStorage.setItem(storageName, JSON.stringify(savedJokes));
-  }, [savedJokes]);
-
 
   return (
     <>
