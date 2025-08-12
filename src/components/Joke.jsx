@@ -1,18 +1,34 @@
-import { useState, useEffect } from 'react';
-import drumAudio from '../../src/assets/audio/drum.mp3';
+import { useState, useEffect, useRef } from 'react';
+import drumAudio from '../assets/audio/drum.mp3';
 
 export default function Joke({ saveJoke }) {
 
     const [data, setData] = useState(null);
-
-    let audio = new Audio(drumAudio);
+    const audioRef = useRef(null);
     
     function playAudio() {
-        audio.play()
+        if(!audioRef.current) return;
+
+        audioRef.current.currentTime = 0;
+        
+        audioRef.current.play().catch(e => {
+            console.warn("Audio play failed:", e);
+        });
     }
 
     useEffect(() => {
         fetchJoke();
+
+        audioRef.current = new Audio(drumAudio);
+        audioRef.current.preload = "auto";
+
+        return() => {
+            if(audioRef.current) {
+                audioRef.current.pause();
+                audioRef.current.src = "";
+                audioRef.current = null;
+            }
+        };
     }, []);
 
     function renderJoke() {
