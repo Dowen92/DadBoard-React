@@ -324,3 +324,8 @@ hr {
   margin-left: 5px;
   font-size: .75em;
 }
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}

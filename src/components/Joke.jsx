@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import drumAudio from '../assets/audio/drum.mp3';
 
 export default function Joke({ saveJoke }) {
 
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     const audioRef = useRef(null);
     
     function playAudio() {
@@ -40,16 +43,26 @@ export default function Joke({ saveJoke }) {
         return joke
     }
 
-    function fetchJoke() {
-        fetch('https://icanhazdadjoke.com/', {
-            method: "GET",
-            headers: {
-                "Accept": "application/json",
-            }
-        })
-            .then(response => response.json())
-            .then(json => setData(json))
-            .catch(error => console.error(error));
+    async function fetchJoke() {
+        if(loading) return;
+
+        setLoading(true);
+
+        try {
+            const res = await fetch('https://icanhazdadjoke.com/', {
+                headers: { Accept: "application/json" }
+            });
+
+            if(!res.ok) throw new Error("Failed to fetch jokes");
+            
+            const json = await res.json();
+            setData(json);
+        } catch (err) {
+            console.error(err);
+            toast.error("Couldn't fetch a joke - try again.");
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -64,24 +77,25 @@ export default function Joke({ saveJoke }) {
                 </div>
                 <div className='card-footer'>
                     <div className='card-item'>
-                        <button className='button is-primary joke-button' id="punchLineButton" onClick={playAudio}>
+                        <button className='joke-button' id="punchLineButton" onClick={playAudio}>
                             <i className='fas fa-drum fa-2x'></i>
                         </button>
                     </div>
                     <div className='card-item'>
                         <button
-                            className='button is-primary joke-button'
+                            className={`joke-button ${loading ? "disabled" : ""}`}
                             id='getJokeButton'
-                            onClick={fetchJoke}>
+                            onClick={!loading ? fetchJoke : undefined}
+                            disabled={loading}>
                             <i className='fas fa-retweet fa-2x'></i>
                         </button>
                     </div>
                     <div className='card-item'>
                         <button
-                            className='button is-primary add-joke-button joke-button'
+                            className={`add-joke-button joke-button ${loading ? "disabled" : ""}`}
                             id='addJokeButton'
                             onClick={() => saveJoke(data)}
-                        >
+                            disabled={loading}>                        
                             <i className='fa fa-plus fa-2x'></i>
                             <i className='padding-left fa fa-list-ul fa-2x'></i>
                         </button>
