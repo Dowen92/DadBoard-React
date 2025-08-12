@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import drumAudio from '../assets/audio/drum.mp3';
 
 export default function Joke({ saveJoke }) {

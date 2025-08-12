@@ -14,7 +14,7 @@ export default function SavedJoke({ id, joke, laughs, deleteJoke, updateJokeLaug
                         <span className="visually-hidden">Laughs</span>
                     </button>
                     <button
-                        className="button delete-button fas fa-trash-alt"
+                        className="button delete-button fas fa-trash-alt fa-lg"
                         onClick={() => deleteJoke(id)}
                         aria-label={`Delete the joke ${joke}`}                        
                     >
