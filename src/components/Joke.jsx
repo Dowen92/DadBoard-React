@@ -5,15 +5,15 @@ import drumAudio from '../assets/audio/drum.mp3';
 export default function Joke({ saveJoke }) {
 
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const audioRef = useRef(null);
-    
+
     function playAudio() {
-        if(!audioRef.current) return;
+        if (!audioRef.current) return;
 
         audioRef.current.currentTime = 0;
-        
+
         audioRef.current.play().catch(e => {
             console.warn("Audio play failed:", e);
         });
@@ -25,8 +25,8 @@ export default function Joke({ saveJoke }) {
         audioRef.current = new Audio(drumAudio);
         audioRef.current.preload = "auto";
 
-        return() => {
-            if(audioRef.current) {
+        return () => {
+            if (audioRef.current) {
                 audioRef.current.pause();
                 audioRef.current.src = "";
                 audioRef.current = null;
@@ -44,7 +44,7 @@ export default function Joke({ saveJoke }) {
     }
 
     async function fetchJoke() {
-        if(loading) return;
+        if (loading) return;
 
         setLoading(true);
 
@@ -53,8 +53,8 @@ export default function Joke({ saveJoke }) {
                 headers: { Accept: "application/json" }
             });
 
-            if(!res.ok) throw new Error("Failed to fetch jokes");
-            
+            if (!res.ok) throw new Error("Failed to fetch jokes");
+
             const json = await res.json();
             setData(json);
         } catch (err) {
@@ -67,7 +67,7 @@ export default function Joke({ saveJoke }) {
 
     return (
         <>
-            <section className='card'>                
+            <section className='card'>
                 <div className='card-content'>
                     <div className='joke-text'>
                         <p id="jokeText">
@@ -77,7 +77,11 @@ export default function Joke({ saveJoke }) {
                 </div>
                 <div className='card-footer'>
                     <div className='card-item'>
-                        <button className='joke-button' id="punchLineButton" onClick={playAudio}>
+                        <button
+                            className='joke-button'
+                            id="punchLineButton"
+                            onClick={playAudio}
+                            aria-label={`Play punch line audio.`}>
                             <i className='fas fa-drum fa-2x'></i>
                         </button>
                     </div>
@@ -86,7 +90,8 @@ export default function Joke({ saveJoke }) {
                             className={`joke-button ${loading ? "disabled" : ""}`}
                             id='getJokeButton'
                             onClick={!loading ? fetchJoke : undefined}
-                            disabled={loading}>
+                            disabled={loading}
+                            aria-label={`Get a new joke.`}>
                             <i className='fas fa-retweet fa-2x'></i>
                         </button>
                     </div>
@@ -95,7 +100,8 @@ export default function Joke({ saveJoke }) {
                             className={`add-joke-button joke-button ${loading ? "disabled" : ""}`}
                             id='addJokeButton'
                             onClick={() => saveJoke(data)}
-                            disabled={loading}>                        
+                            disabled={loading}
+                            aria-label={`Save joke to list.`}>
                             <i className='fa fa-plus fa-2x'></i>
                             <i className='padding-left fa fa-list-ul fa-2x'></i>
                         </button>

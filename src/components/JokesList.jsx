@@ -20,8 +20,8 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
         return jokeListElements;
     }
 
-    function onClickSaveJoke(){
-        if(!newJokeText.trim()) return;
+    function onClickSaveJoke() {
+        if (!newJokeText.trim()) return;
 
         const jokeData = {
             joke: newJokeText.trim()
@@ -41,14 +41,20 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
                         <h1>Jokes</h1>
                     </div>
                     <div className='field is-grouped flex-1'>
-                        <button onClick={onClickSaveJoke} className='button is-primary add-button' id="addJokeButton"><i className='fas fa-plus'></i></button>
-                        <input 
-                        value={newJokeText}
-                            onChange={(e) => setNewJokeText(e.target.value)} 
-                            className='input' 
-                            id="jokeInput" 
-                            type="text" 
-                            placeholder="Add a new joke to your list..." 
+                        <button
+                            onClick={onClickSaveJoke}
+                            className='button is-primary add-button'
+                            aria-label={`Save joke to list.`}
+                            id="addJokeButton">
+                            <i className='fas fa-plus'></i></button>
+                        <input
+                            value={newJokeText}
+                            onChange={(e) => setNewJokeText(e.target.value)}
+                            className='input'
+                            id="jokeInput"
+                            type="text"
+                            placeholder="Add a new joke to your list..."
+                            aria-label={`Input your own joke to save.`}
                         />
                     </div>
                 </div>
