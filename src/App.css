@@ -3,9 +3,7 @@
 }
 
 .title-text {
-  font-weight: bolder;
   margin-top: 15px;
-  margin-bottom: 0px;
   font-size: 3em;
   text-shadow: 2px 2px #8d8d8d;
 }
@@ -51,7 +49,7 @@ a:hover {
 }
 
 .card-content {
-  margin: 10px;
+  padding: 20px;
 }
 
 .card-footer {
@@ -65,11 +63,6 @@ a:hover {
 .card-item {
   display: flex;
   justify-content: center;
-}
-
-.joke-hr {
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .joke {
@@ -88,7 +81,6 @@ a:hover {
 }
 
 .joke-text {
-  width: 100%;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -105,14 +97,6 @@ a:hover {
 
 .padding-left {
   padding-left: 10px;
-}
-
-.punchline-container {
-  flex: 1;
-  padding-top: 0px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .joke-button {
@@ -238,11 +222,6 @@ a:hover {
   font-size: 1.1em;
 }
 
-.joke-told {
-  text-decoration: line-through;
-  color: #00d1b2;
-}
-
 .input {
   box-shadow: inset 0.0625em .125em rgba(10, 10, 10, .05);
   max-width: 100%;
@@ -269,7 +248,7 @@ h1 {
 }
 
 .field {
-  padding-top: 2px;
+  padding-top: 10px;
   display: flex;
   justify-content: flex-start;
 }

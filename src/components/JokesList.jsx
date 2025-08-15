@@ -32,7 +32,6 @@ export default function JokesList({ savedJokes, deleteJoke, updateJokeLaughCount
         setNewJokeText("");
     }
 
-
     return (
         <section className='card list-card'>
             <div className='list-container' id="list-container">

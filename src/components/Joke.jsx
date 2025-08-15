@@ -97,7 +97,7 @@ export default function Joke({ saveJoke }) {
                     </div>
                     <div className='card-item'>
                         <button
-                            className={`add-joke-button joke-button ${loading ? "disabled" : ""}`}
+                            className={`joke-button ${loading ? "disabled" : ""}`}
                             id='addJokeButton'
                             onClick={() => saveJoke(data)}
                             disabled={loading}
