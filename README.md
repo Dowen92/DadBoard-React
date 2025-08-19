@@ -11,9 +11,8 @@ DadBoard is a lighthearted, mobile-friendly joke app where you can fetch dad jok
 - **Fetch Random Jokes** – Pulled from the [icanhazdadjoke API](https://icanhazdadjoke.com/) with a single click.
 - **Save API Jokes** – Store your favourites with one tap—no retyping required.
 - **Add Your Own Jokes** – Build your custom joke list and manage it locally.
-- **Mark as Told** – Track which jokes you’ve already used.
 - **Delete Jokes** – Remove jokes from your list anytime.
-- **Laugh Counter** – Keep tabs on how many times a joke makes you laugh.
+- **Laugh Counter** – Keep tabs on how many times a joke gets you laugh.
 - **"Ba-dum-tss" Sound Effect** – Classic punchline delivery for extra impact.
 - **Buy Me a Coffee** – Support the app with a PayPal button.
 - **Fully Mobile Friendly** – Designed to work great on any screen size.
@@ -24,7 +23,7 @@ DadBoard is a lighthearted, mobile-friendly joke app where you can fetch dad jok
 ## 🚀 Live Demo
 
 Check it out here:  
-🔗 [https://dadboard2.netlify.app]
+🔗 [https://dadboard.netlify.app]
 
 ![DadBoard](https://github.com/user-attachments/assets/26938761-4184-42d8-98b9-69e6c039d46f)
 
